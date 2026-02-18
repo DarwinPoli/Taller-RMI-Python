@@ -33,6 +33,7 @@ class SalariosImpl(ISalarios):
                 fila.append(salario)
             matriz.append(fila)
         print("Matriz de salarios generada exitosamente")
+        print(matriz)
         return matriz
 
     def calcularTotalEmpleado(self, matriz: List[List[float]]) -> List[float]:
