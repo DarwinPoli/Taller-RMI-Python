@@ -32,6 +32,12 @@ def iniciar_cliente() -> None:
         # Verificar conexión inicial
         salarios._pyroBind()
         
+        # Identificación inicial con el servidor
+        print("\nConectando al servidor remoto...")
+        nombre_usuario = input("Ingrese su nombre para identificarse: ")
+        saludo = salarios.conectar(nombre_usuario)
+        print(f"\nRespuesta del servidor: {saludo}")
+        
         matriz: List[List[float]] = []
         
         while True:

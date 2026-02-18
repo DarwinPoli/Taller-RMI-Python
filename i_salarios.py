@@ -65,3 +65,16 @@ class ISalarios(ABC):
             Total general de la matriz.
         """
         pass
+
+    @abstractmethod
+    def conectar(self, nombre_cliente: str) -> str:
+        """
+        Registra la conexión de un cliente en el servidor.
+
+        Args:
+            nombre_cliente: Nombre del usuario que se conecta.
+
+        Returns:
+            Mensaje de bienvenida.
+        """
+        pass

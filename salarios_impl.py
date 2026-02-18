@@ -66,3 +66,18 @@ class SalariosImpl(ISalarios):
 
         print(f"Total general calculado: ${total:,.2f}")
         return total
+
+    def conectar(self, nombre_cliente: str) -> str:
+        """
+        Implementación del registro de conexión.
+        Muestra en la consola del servidor quién se conectó y desde dónde.
+        """
+        # Pyro5.api.current_context nos da metadatos de la llamada actual
+        direccion_ip = Pyro5.api.current_context.client_sock_addr[0]
+        print(f"\n" + "=" * 40)
+        print(f"[+] NUEVA CONEXIÓN DETECTADA")
+        print(f"    Cliente: {nombre_cliente}")
+        print(f"    Desde IP: {direccion_ip}")
+        print("=" * 40)
+        
+        return f"Hola {nombre_cliente}, conexión establecida con el servidor de salarios."
